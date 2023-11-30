@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.listen(3001, () => {
-  console.log("Server is running on port 3001");
+    console.log("Server is running on port 3001");
 });
 
 app.get('/', (req, res) => {
@@ -23,17 +23,17 @@ app.get('/', (req, res) => {
 
 app.post('/updateData', (req, res) => {
     console.log(req.body);
-    if(req && req.body) {
-    updateCsvData(req.body).then((response) => {
-        console.log("update response: ", response)
-        res.json(response)
-    }).catch((err) => {
-        res.json(err)
-    })
-}
-else {
-    res.json('Error')
-}
+    if (req && req.body) {
+        updateCsvData(req.body).then((response) => {
+            console.log("update response: ", response)
+            res.json(response)
+        }).catch((err) => {
+            res.json(err)
+        })
+    }
+    else {
+        res.json('Error')
+    }
     //res.json('Hello!!!!')
 })
 
